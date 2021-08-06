@@ -10,17 +10,14 @@
     </ul>
   </div>
 </template>
-
 <script lang="ts">
-import { ColumnProps } from '../typings'
-
-export default defineComponent({
+export default {
   name: 'ColumnList',
-})
+}
 </script>
 <script lang="ts" setup>
-import { defineComponent, PropType } from 'vue'
-
+import type { PropType } from 'vue'
+import type { ColumnProps } from '../typings'
 defineProps({
   list: {
     type: Array as PropType<ColumnProps[]>,

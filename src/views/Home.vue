@@ -1,16 +1,15 @@
 <template>
   <ColumnList :list="state.list"></ColumnList>
 </template>
-
 <script lang="ts">
-export default defineComponent({
+export default {
   name: 'Home',
-})
+}
 </script>
 <script lang="ts" setup>
 import ColumnList from '@/components/ColumnList.vue'
-import { ColumnProps } from '../typings'
-import { defineComponent, reactive } from 'vue'
+import type { ColumnProps } from '../typings'
+import { reactive } from 'vue'
 
 const testData: ColumnProps[] = [
   {
