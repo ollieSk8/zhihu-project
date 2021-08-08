@@ -1,11 +1,12 @@
 <template>
   <div class="validate-input-container pb-3">
     <input
-      type="text"
       class="form-control"
-      v-model="inputRef.val"
+      :value="inputRef.val"
       :class="{ 'is-invalid': inputRef.error }"
       @blur="validateInput"
+      @input="updateValue"
+      v-bind="$attrs"
     />
     <span v-if="inputRef.error" class="invalid-feedback">{{
       inputRef.message
@@ -15,6 +16,7 @@
 <script lang="ts">
 export default {
   name: 'ValidateInput',
+  inheritAttrs: false,
 }
 </script>
 <script lang="ts" setup>
@@ -28,9 +30,11 @@ const props = defineProps({
     type: Array as PropType<RuleProp[]>,
     required: true,
   },
+  modelValue: String,
 })
+const emit = defineEmits(['update:modelValue'])
 const inputRef = reactive({
-  val: '',
+  val: props.modelValue,
   error: false,
   message: '',
 })
@@ -41,10 +45,10 @@ const validateInput = () => {
       inputRef.message = rule.message
       switch (rule.type) {
         case 'required':
-          passed = inputRef.val.trim() !== ''
+          passed = (inputRef.val as string).trim() !== ''
           break
         case 'email':
-          passed = emailReg.test(inputRef.val)
+          passed = emailReg.test(inputRef.val as string)
           break
         default:
           break
@@ -53,6 +57,11 @@ const validateInput = () => {
     })
     inputRef.error = !allPassed
   }
+}
+const updateValue = (e: Event) => {
+  const targetValue = (e.target as HTMLInputElement).value
+  inputRef.val = targetValue
+  emit('update:modelValue', targetValue)
 }
 </script>
 
