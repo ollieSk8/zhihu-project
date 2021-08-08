@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <GlobalHeader :user="state.user"></GlobalHeader>
+  <div class="container">
     <ColumnList :list="state.list"></ColumnList>
   </div>
 </template>
@@ -10,7 +9,6 @@ export default {
 }
 </script>
 <script lang="ts" setup>
-import GlobalHeader from '@/components/GlobalHeader.vue'
 import ColumnList from '@/components/ColumnList.vue'
 import type { ColumnProps } from '../typings'
 import { reactive } from 'vue'
@@ -33,10 +31,6 @@ const testData: ColumnProps[] = [
 ]
 const state = reactive({
   list: testData,
-  user: {
-    isLogin: false,
-    name: 'ollie',
-  },
 })
 </script>
 
