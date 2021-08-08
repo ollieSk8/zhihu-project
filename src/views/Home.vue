@@ -1,6 +1,8 @@
 <template>
-  <GlobalHeader :user="state.user"></GlobalHeader>
-  <ColumnList :list="state.list"></ColumnList>
+  <div>
+    <GlobalHeader :user="state.user"></GlobalHeader>
+    <ColumnList :list="state.list"></ColumnList>
+  </div>
 </template>
 <script lang="ts">
 export default {
