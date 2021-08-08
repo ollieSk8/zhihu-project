@@ -13,6 +13,7 @@ export default defineConfig({
       'styles':path.resolve(__dirname,'src/styles'),
       'views':path.resolve(__dirname,'src/views'),
       'types':path.resolve(__dirname,'src/types'),
+      'hooks':path.resolve(__dirname,'src/hooks'),
     }
   },
   plugins: [vue()]
