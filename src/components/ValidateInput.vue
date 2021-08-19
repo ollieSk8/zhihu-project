@@ -15,7 +15,6 @@
 </template>
 <script lang="ts">
 export default {
-  name: 'ValidateInput',
   inheritAttrs: false,
 }
 </script>
@@ -56,6 +55,9 @@ const validateInput = () => {
       return passed
     })
     inputRef.error = !allPassed
+    return allPassed
+  } else {
+    return true
   }
 }
 const updateValue = (e: Event) => {

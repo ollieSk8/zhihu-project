@@ -3,11 +3,6 @@
     <ColumnList :list="state.list"></ColumnList>
   </div>
 </template>
-<script lang="ts">
-export default {
-  name: 'Home',
-}
-</script>
 <script lang="ts" setup>
 import ColumnList from '@/components/ColumnList.vue'
 import type { ColumnProps } from '../typings'

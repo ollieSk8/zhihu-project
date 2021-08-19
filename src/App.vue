@@ -4,11 +4,6 @@
     <router-view></router-view>
   </div>
 </template>
-<script lang="ts">
-export default {
-  name: 'App',
-}
-</script>
 <script lang="ts" setup>
 import 'bootstrap/dist/css/bootstrap.min.css'
 import GlobalHeader from '@/components/GlobalHeader.vue'

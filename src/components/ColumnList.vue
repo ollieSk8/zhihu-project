@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div v-for="column in list" :key="column._id" class="col-4 mb-4">
+    <div v-for="column in list" :key="column.id" class="col-4 mb-4">
       <div class="card h-100 shadow-sm">
         <div class="card-body text-center">
           <img
@@ -16,11 +16,6 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-export default {
-  name: 'ColumnList',
-}
-</script>
 <script lang="ts" setup>
 import type { PropType } from 'vue'
 import type { ColumnProps } from '../typings'

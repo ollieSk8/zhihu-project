@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form>
+    <ValidateForm @form-submit="onFormSubmit">
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">邮箱地址</label>
         <ValidateInput
@@ -20,20 +20,14 @@
           type="password"
         ></ValidateInput>
       </div>
-      <!-- <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-      </div> -->
-      <button type="submit" class="btn btn-primary">提交</button>
-    </form>
+      <template v-slot:submit>
+        <span class="btn btn-danger">提交</span>
+      </template>
+    </ValidateForm>
   </div>
 </template>
-<script lang="ts">
-export default {
-  name: 'form',
-}
-</script>
 <script lang="ts" setup>
+import ValidateForm from '@/components/ValidateForm.vue'
 import ValidateInput from '@/components/ValidateInput.vue'
 import type { RuleProp } from '../typings'
 import { ref } from 'vue'
@@ -55,6 +49,9 @@ const passwordRules: RuleProp[] = [
 ]
 const emialVal = ref('')
 const passwordVal = ref('')
+const onFormSubmit = (result: boolean) => {
+  console.log('123', result)
+}
 </script>
 
 <style lang="less" scoped></style>
