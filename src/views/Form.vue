@@ -49,7 +49,7 @@ const passwordRules: RuleProp[] = [
 const emialVal = ref('')
 const passwordVal = ref('')
 const onFormSubmit = (result: boolean) => {
-  console.log('表单验证结果', result)
+  console.log('表单验证结果', result) //
 }
 </script>
 
