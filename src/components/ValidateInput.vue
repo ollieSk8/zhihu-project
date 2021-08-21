@@ -14,14 +14,15 @@
   </div>
 </template>
 <script lang="ts">
-export default {
+export default defineComponent({
   inheritAttrs: false,
-}
+})
 </script>
 <script lang="ts" setup>
-import { reactive } from 'vue'
+import { defineComponent, onMounted, reactive } from 'vue'
 import type { PropType } from 'vue'
 import type { RuleProp } from '../typings'
+import { emitter } from '../utils'
 const emailReg =
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 const props = defineProps({
@@ -60,6 +61,9 @@ const validateInput = () => {
     return true
   }
 }
+onMounted(() => {
+  emitter.emit('form-item-created', validateInput)
+})
 const updateValue = (e: Event) => {
   const targetValue = (e.target as HTMLInputElement).value
   inputRef.val = targetValue

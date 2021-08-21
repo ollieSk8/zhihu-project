@@ -9,7 +9,6 @@
           placeholder="请输入邮箱"
           type="text"
         ></ValidateInput>
-        {{ emialVal }}
       </div>
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">密码</label>
@@ -50,7 +49,7 @@ const passwordRules: RuleProp[] = [
 const emialVal = ref('')
 const passwordVal = ref('')
 const onFormSubmit = (result: boolean) => {
-  console.log('123', result)
+  console.log('表单验证结果', result)
 }
 </script>
 
