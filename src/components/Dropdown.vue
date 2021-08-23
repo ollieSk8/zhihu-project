@@ -27,7 +27,7 @@ export default defineComponent({
     const toggleOpen = () => {
       isOpen.value = !isOpen.value
     }
-    const dropdownRef = ref<null | HTMLElement>(null)
+    const dropdownRef = ref<HTMLElement | null>(null)
     const isClickOutside = useClickOutside(dropdownRef)
     watch(isClickOutside, () => {
       if (isOpen.value && isClickOutside.value) {
