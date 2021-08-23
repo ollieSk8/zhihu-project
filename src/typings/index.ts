@@ -9,6 +9,15 @@ export interface UserProps {
   name: string
 }
 export interface RuleProp {
-  type:'required' | 'email';
-  message:string;
+  type: 'required' | 'email'
+  message: string
+}
+
+export interface PostProps {
+  id: number
+  title: string
+  content: string
+  image?: string
+  createdAt: string
+  columnId: number
 }

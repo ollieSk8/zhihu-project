@@ -30,6 +30,8 @@ import ValidateForm from '@/components/ValidateForm.vue'
 import ValidateInput from '@/components/ValidateInput.vue'
 import type { RuleProp } from '../typings'
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+const router = useRouter()
 const emailRules: RuleProp[] = [
   {
     type: 'required',
@@ -50,6 +52,9 @@ const emialVal = ref('')
 const passwordVal = ref('')
 const onFormSubmit = (result: boolean) => {
   console.log('表单验证结果', result) //
+  if (result) {
+    router.push({ name: 'home' })
+  }
 }
 </script>
 
