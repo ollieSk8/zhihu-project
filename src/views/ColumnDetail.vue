@@ -22,12 +22,16 @@
 
 <script lang="ts" setup>
 import { useRoute } from 'vue-router'
-import { testPosts, testData } from '../testData'
 import PostList from '@/components/PostList.vue'
+import { useStore } from 'vuex'
+import { computed } from '@vue/runtime-core'
+import { GlobalDataProps } from '../typings'
 const route = useRoute()
+const store = useStore<GlobalDataProps>()
 const currentId = Number(route.params.id)
-const column = testData.find((c) => c.id === currentId)
-const list = testPosts.filter((post) => post.columnId === currentId)
+const column = computed(() => store.getters.getColumnById(currentId))
+
+const list = computed(() => store.getters.getPostsByCid(currentId))
 </script>
 
 <style lang="less" scoped></style>

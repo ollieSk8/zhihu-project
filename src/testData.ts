@@ -1,17 +1,4 @@
-export interface ColumnProps {
-  id: number
-  title: string
-  avatar?: string
-  description: string
-}
-export interface PostProps {
-  id: number
-  title: string
-  content: string
-  image?: string
-  createdAt: string
-  columnId: number
-}
+import type { PostProps, ColumnProps } from './typings'
 export const testData: ColumnProps[] = [
   {
     id: 1,

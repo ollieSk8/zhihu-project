@@ -31,7 +31,9 @@ import ValidateInput from '@/components/ValidateInput.vue'
 import type { RuleProp } from '../typings'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { useStore } from 'vuex'
 const router = useRouter()
+const store = useStore()
 const emailRules: RuleProp[] = [
   {
     type: 'required',
@@ -51,9 +53,9 @@ const passwordRules: RuleProp[] = [
 const emialVal = ref('')
 const passwordVal = ref('')
 const onFormSubmit = (result: boolean) => {
-  console.log('表单验证结果', result) //
   if (result) {
     router.push({ name: 'home' })
+    store.commit('login')
   }
 }
 </script>

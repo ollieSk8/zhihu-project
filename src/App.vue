@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <GlobalHeader :user="state.user"></GlobalHeader>
+    <GlobalHeader :user="currentUser"></GlobalHeader>
     <router-view></router-view>
     <footer class="text-center py-4 text-secondary bg-light mt-6">
       <small>
@@ -18,11 +18,9 @@
 <script lang="ts" setup>
 import 'bootstrap/dist/css/bootstrap.min.css'
 import GlobalHeader from '@/components/GlobalHeader.vue'
-import { reactive } from 'vue'
-const state = reactive({
-  user: {
-    isLogin: false,
-    name: 'ollie',
-  },
-})
+import { computed } from 'vue'
+import { useStore } from 'vuex'
+import { GlobalDataProps } from './typings'
+const store = useStore<GlobalDataProps>()
+const currentUser = computed(() => store.state.user)
 </script>
