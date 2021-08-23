@@ -4,7 +4,7 @@
       <div class="card h-100 shadow-sm">
         <div class="card-body text-center">
           <img
-            :src="column.avatar"
+            :src="column.avatar && column.avatar.fitUrl"
             :alt="column.title"
             class="rounded-circle border border-light my-3"
           />
