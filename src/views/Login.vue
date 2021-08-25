@@ -4,22 +4,22 @@
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">邮箱地址</label>
         <ValidateInput
-          :rules="emailRules"
           v-model="emialVal"
+          :rules="emailRules"
           placeholder="请输入邮箱"
           type="text"
-        ></ValidateInput>
+        />
       </div>
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">密码</label>
         <ValidateInput
-          :rules="passwordRules"
           v-model="passwordVal"
+          :rules="passwordRules"
           placeholder="请输入邮箱"
           type="password"
-        ></ValidateInput>
+        />
       </div>
-      <template v-slot:submit>
+      <template #submit>
         <span class="btn btn-danger">提交</span>
       </template>
     </ValidateForm>

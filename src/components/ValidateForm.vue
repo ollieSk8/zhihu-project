@@ -1,6 +1,6 @@
 <template>
   <form class="validate-form-container">
-    <slot name="default"></slot>
+    <slot name="default" />
     <div class="submit-area" @click.prevent="submitForm">
       <slot name="submit">
         <button type="submit" class="btn btn-primary">提交</button>
@@ -14,7 +14,7 @@ import { onUnmounted } from 'vue'
 import { emitter } from '../utils'
 
 type ValidateFunc = () => boolean
-type Events = {
+interface Events {
   'form-item-created': ValidateFunc
 }
 

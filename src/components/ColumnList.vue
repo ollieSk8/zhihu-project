@@ -8,13 +8,15 @@
             :alt="column.title"
             class="rounded-circle border border-light my-3"
           />
-          <h5 class="card-title">{{ column.title }}</h5>
-          <p class="card-text text-left">{{ column.description }}</p>
-          <router-link
-            :to="`/columnDetail/${column.id}`"
-            class="btn btn-outline-primary"
-            >进入专栏</router-link
-          >
+          <h5 class="card-title">
+            {{ column.title }}
+          </h5>
+          <p class="card-text text-left">
+            {{ column.description }}
+          </p>
+          <router-link :to="`/columnDetail/${column.id}`" class="btn btn-outline-primary">
+            进入专栏
+          </router-link>
         </div>
       </div>
     </div>

@@ -1,14 +1,8 @@
 <template>
   <div class="column-detail-page w-75 mx-auto">
-    <div
-      class="column-info row mb-4 border-bottom pb-4 align-items-center"
-      v-if="column"
-    >
+    <div v-if="column" class="column-info row mb-4 border-bottom pb-4 align-items-center">
       <div class="col-3 text-center">
-        <img
-          :src="column.avatar"
-          :alt="column.title"
-          class="rounded-circle border"
+        <img :src="column.avatar" :alt="column.title" class="rounded-circle border" />
         />
       </div>
       <div class="col-9">
