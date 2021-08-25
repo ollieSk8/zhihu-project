@@ -1,5 +1,5 @@
 <template>
-    <div class="dropdown">
+    <div class="dropdown" ref="dropdownRef">
         <a href="#" class="btn btn-outline-light my-2 dropdown-toggle" @click.prevent="toggleOpen">
             {{ title }}
         </a>
@@ -23,7 +23,7 @@ export default defineComponent({
         const toggleOpen = () => {
             isOpen.value = !isOpen.value
         }
-        const dropdownRef = ref<null | HTMLElement>(null)
+        const dropdownRef = ref<any>(null)
         const isClickOutside = useClickOutside(dropdownRef)
         watch(isClickOutside, () => {
             if (isOpen.value && isClickOutside.value) {
