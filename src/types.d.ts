@@ -4,6 +4,4 @@ interface ColumnProps {
   avatar?: string
   description: string
 }
-export {
-  ColumnProps
-}
+export { ColumnProps }
