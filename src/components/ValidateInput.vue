@@ -2,6 +2,16 @@
 <template>
   <div class="validate-input-container pb-3">
     <input
+      v-if="tag === 'input'"
+      class="form-control"
+      :value="inputRef.val"
+      :class="{ 'is-invalid': inputRef.error }"
+      v-bind="$attrs"
+      @blur="validateInput"
+      @input="updateValue"
+    />
+    <textarea
+      v-else
       class="form-control"
       :value="inputRef.val"
       :class="{ 'is-invalid': inputRef.error }"
@@ -22,6 +32,7 @@ import { defineComponent, onMounted, reactive } from 'vue'
 import type { PropType } from 'vue'
 import type { RuleProp } from '../typings'
 import { emitter } from '../utils'
+type TagType = 'input' | 'textarea'
 const emailReg = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 const props = defineProps({
   rules: {
@@ -30,6 +41,14 @@ const props = defineProps({
     required: true,
   },
   modelValue: String,
+  tag: {
+    type: String as PropType<TagType>,
+    default: 'input',
+  },
+  tag99: {
+    type: String as PropType<TagType>,
+    default: 'textarea',
+  },
 })
 const emit = defineEmits(['update:modelValue'])
 const inputRef = reactive({

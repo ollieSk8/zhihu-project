@@ -22,8 +22,8 @@ module.exports = {
         'plugin:vue/base',
         'plugin:vue/vue3-recommended',
         // 此条内容开启会导致 全局定义的 ts 类型报  no-undef 错误，因为
-        // https://cn.eslint.org/docs/rules/
         //'eslint:recommended',
+        // https://cn.eslint.org/docs/rules/
         'plugin:@typescript-eslint/recommended', // typescript-eslint推荐规则,
         'prettier',
         'plugin:prettier/recommended',
@@ -43,6 +43,7 @@ module.exports = {
         'vue/no-lone-template': 'off',
         'prettier/prettier': ['error', { tabWidth: 2 }],
         'vue/max-attributes-per-line': ['off'],
+        'vue/v-slot-style': ['error', 'longform'],
         // 强制使用驼峰命名
         // 'vue/component-name-in-template-casing': [
         //     'error',

@@ -19,7 +19,7 @@
           type="password"
         />
       </div>
-      <template #submit>
+      <template v-slot:submit>
         <span class="btn btn-danger">提交</span>
       </template>
     </ValidateForm>
