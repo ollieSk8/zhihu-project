@@ -19,7 +19,7 @@ export default defineComponent({
     },
   },
   setup() {
-    let isOpen = ref(true)
+    let isOpen = ref(false)
     const toggleOpen = () => {
       isOpen.value = !isOpen.value
     }

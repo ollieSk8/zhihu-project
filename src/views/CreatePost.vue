@@ -56,7 +56,7 @@ const onFormSubmit = (result: boolean) => {
       }
       store.commit('createPost', newPost)
       router.push({
-        name: 'columnDetail',
+        name: 'column',
         params: { id: columnId },
       })
     }

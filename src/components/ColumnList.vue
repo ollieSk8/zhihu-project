@@ -14,7 +14,7 @@
           <p class="card-text text-left">
             {{ column.description }}
           </p>
-          <router-link :to="`/columnDetail/${column.id}`" class="btn btn-outline-primary">
+          <router-link :to="`/column/${column.id}`" class="btn btn-outline-primary">
             进入专栏
           </router-link>
         </div>
