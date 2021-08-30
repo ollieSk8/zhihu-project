@@ -29,20 +29,17 @@ const store = createStore<GlobalDataProps>({
     },
   },
   actions: {
-    fetchColums({ commit }) {
-      axios.get('/columns?currentPage=1&pageSize=10').then((res) => {
-        commit('fetchColums', res.data)
-      })
+    async fetchColums({ commit }) {
+      const { data } = await axios.get('/columns?currentPage=1&pageSize=10')
+      commit('fetchColums', data)
     },
-    fetchColum({ commit }, cid) {
-      axios.get(`/columns/${cid}`).then((res) => {
-        commit('fetchColum', res.data)
-      })
+    async fetchColum({ commit }, cid) {
+      const { data } = await axios.get(`/columns/${cid}`)
+      commit('fetchColum', data)
     },
-    fetchPosts({ commit }, cid) {
-      axios.get(`/columns/${cid}/posts?currentPage=1&pageSize=10`).then((res) => {
-        commit('fetchPosts', res.data)
-      })
+    async fetchPosts({ commit }, cid) {
+      const { data } = await axios.get(`/columns/${cid}/posts?currentPage=1&pageSize=10`)
+      commit('fetchPosts', data)
     },
   },
   getters: {
