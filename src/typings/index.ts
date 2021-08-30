@@ -5,9 +5,9 @@ export interface ImageProps {
   fitUrl?: string
 }
 export interface ColumnProps {
-  id: number
+  _id: string
   title: string
-  avatar?: string
+  avatar?: ImageProps
   description: string
 }
 export type RulesProp = RuleProp[]
@@ -23,12 +23,13 @@ export interface RuleProp {
 }
 
 export interface PostProps {
-  id: number
+  _id: string
   title: string
-  content: string
-  image?: string
+  excerpt?: string
+  content?: string
+  image?: ImageProps
   createdAt: string
-  columnId: number
+  column: string
 }
 
 export interface GlobalDataProps {

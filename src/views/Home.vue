@@ -17,11 +17,14 @@
 </template>
 <script lang="ts" setup>
 import ColumnList from '@/components/ColumnList.vue'
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useStore } from 'vuex'
 import { GlobalDataProps } from '../typings'
 const store = useStore<GlobalDataProps>()
 const list = computed(() => store.state.columns)
+onMounted(() => {
+  store.dispatch('fetchColums')
+})
 </script>
 
 <style lang="less" scoped></style>

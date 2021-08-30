@@ -11,6 +11,12 @@ instance.interceptors.request.use((config) => {
     ...config.params,
     icode: iCode,
   }
+  if (config.data instanceof FormData) {
+    config.data.append('icode', iCode as string)
+  } else {
+    // 普通的 body 对象，添加到 data 中
+    config.data = { ...config.data, icode: iCode }
+  }
   return config
 })
 export { instance }
