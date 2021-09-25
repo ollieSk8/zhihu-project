@@ -31,9 +31,24 @@ export interface PostProps {
   createdAt: string
   column: string
 }
+export interface children {
+  treeNodeId: string
+  treeNodeName: string
+  treeType: number
+  checked: boolean
+  children: [] | any
+}
+export interface treeNode {
+  treeNodeId: string
+  treeNodeName: string
+  treeType: number
+  checked: boolean
+  children: children | [] | any
+}
 
 export interface GlobalDataProps {
   columns: ColumnProps[]
   posts: PostProps[]
   user: UserProps
+  treeData: treeNode[]
 }

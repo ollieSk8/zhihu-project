@@ -8,6 +8,7 @@
         "serve": "vite preview"
     },
     "dependencies": {
+        "ant-design-vue": "^2.2.8",
         "axios": "^0.21.1",
         "bootstrap": "^5.1.0",
         "mitt": "^3.0.0",

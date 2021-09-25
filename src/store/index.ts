@@ -6,6 +6,89 @@ const store = createStore<GlobalDataProps>({
     columns: [],
     posts: [],
     user: { isLogin: true, name: 'ollie', columnId: 1 },
+    treeData: [
+      {
+        treeNodeId: '1',
+        treeNodeName: '一级菜单01',
+        treeType: 1,
+        checked: false,
+        children: [
+          {
+            treeNodeId: '1-1',
+            treeNodeName: '二级菜单01',
+            treeType: 1,
+            checked: false,
+            children: [
+              {
+                treeNodeId: '1-1-1',
+                treeNodeName: '三级菜单01',
+                treeType: 1,
+                checked: false,
+                children: [
+                  {
+                    treeNodeId: '1-1-1-1',
+                    treeNodeName: '四级菜单01',
+                    treeType: 2,
+                    checked: false,
+                    children: [],
+                  },
+                  {
+                    treeNodeId: '1-1-1-2',
+                    treeNodeName: '四级菜单02',
+                    treeType: 2,
+                    checked: false,
+                    children: [],
+                  },
+                ],
+              },
+              {
+                treeNodeId: '1-1-2',
+                treeNodeName: '三级菜单02',
+                treeType: 1,
+                checked: false,
+                children: [],
+              },
+            ],
+          },
+          {
+            treeNodeId: '1-2',
+            treeNodeName: '二级菜单02',
+            treeType: 1,
+            checked: false,
+            children: [
+              {
+                treeNodeId: '1-2-1',
+                treeNodeName: '三级菜单01',
+                treeType: 1,
+                checked: false,
+                children: [],
+              },
+              {
+                treeNodeId: '1-2-2',
+                treeNodeName: '三级菜单02',
+                treeType: 1,
+                checked: false,
+                children: [],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        treeNodeId: '2',
+        treeNodeName: '一级菜单02',
+        treeType: 1,
+        checked: false,
+        children: [],
+      },
+      {
+        treeNodeId: '3',
+        treeNodeName: '一级菜单03',
+        treeType: 1,
+        checked: false,
+        children: [],
+      },
+    ],
   },
   mutations: {
     login(state) {

@@ -29,6 +29,22 @@ const router = createRouter({
         requiredLogin: true,
       },
     },
+    {
+      path: '/roleTree',
+      name: 'roleTree',
+      component: () => import('views/RoleTree/index.vue'),
+      meta: {
+        requiredLogin: true,
+      },
+    },
+    {
+      path: '/antdTree',
+      name: 'antdTree',
+      component: () => import('views/AntdTree.vue'),
+      meta: {
+        requiredLogin: true,
+      },
+    },
   ],
 })
 router.beforeEach((to, form, next) => {
